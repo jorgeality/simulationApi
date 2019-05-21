@@ -43,9 +43,9 @@ class LinearRegression(Resource):
             AddTimes = []
             for y in range(len(passengersRandoms[0])):
                 AddTimes.append({'passenger':int(passengersRandoms[x][y]), 'Arrive':int(ArriveRandoms[x][y])})
-            timess.append(AddTimes)
-        Times['data'] = timess
-        return Times['data'][0]
+            timess.append({'data' : AddTimes})
+        Times['dataSet'] = timess
+        return Times['dataSet'][0]
 
 api.add_resource(DataSets, '/')
 api.add_resource(LinearRegression, '/linear')
